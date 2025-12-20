@@ -266,15 +266,17 @@ const CursorTrail = () => {
 // --- Helper: Loading Screen ---
 const LoadingScreen = ({ progress }: { progress: number }) => {
     return (
-        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center" style={{ backgroundColor: COLORS.nightBlue }}>
-             <div className="text-6xl animate-bounce mb-8 filter drop-shadow-[0_0_10px_#FFAD66]">💌</div>
-             <h2 className="text-[#FFAD66] font-bold text-xl mb-4 pixel-text-glow tracking-widest">LOADING MEMORIES...</h2>
-             <div className="w-64 h-6 bg-black border-4 border-white p-1 shadow-[4px_4px_0_rgba(0,0,0,0.5)]">
+        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center px-4" style={{ backgroundColor: COLORS.nightBlue }}>
+             <div className="text-5xl sm:text-6xl animate-bounce mb-6 sm:mb-8 filter drop-shadow-[0_0_10px_#FFAD66]">💌</div>
+             <h2 className="text-[#FFAD66] font-bold text-lg sm:text-xl mb-6 pixel-text-glow tracking-widest text-center leading-loose">
+                 LOADING<br className="block sm:hidden" /> MEMORIES...
+             </h2>
+             <div className="w-64 max-w-[90%] h-6 bg-black border-4 border-white p-1 shadow-[4px_4px_0_rgba(0,0,0,0.5)]">
                  <div className="h-full bg-[#D94C23] transition-all duration-100 ease-out relative" style={{ width: `${progress}%` }}>
                     <div className="absolute top-0 right-0 h-full w-1 bg-white opacity-50 animate-pulse"></div>
                  </div>
              </div>
-             <div className="mt-4 text-xs text-gray-400 font-mono tracking-widest">{Math.round(progress)}% COMPLETE</div>
+             <div className="mt-4 text-[10px] sm:text-xs text-gray-400 font-mono tracking-widest">{Math.round(progress)}% COMPLETE</div>
         </div>
     );
 };
