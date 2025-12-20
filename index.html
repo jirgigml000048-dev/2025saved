@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Pixel Christmas Quest</title>
+    <!-- Tailwind CSS (Keep CDN for simplicity) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Retro Pixel Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Pixel Art Rendering Optimizations */
+      body {
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+        font-family: 'Press Start 2P', cursive;
+        background-color: #1a262e;
+        overflow: hidden; 
+        height: 100vh;
+        height: 100dvh; 
+        width: 100vw;
+        touch-action: none; 
+      }
+
+      /* Custom Cursor */
+      .pixel-cursor {
+        cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADNGREFUOE9jZKAQMFKon2HgM4D//wOxIShG4DMCM4iNh0E1YCADjJoBw2eA0dQzQIFCKgAAyEwD5XyqC5oAAAAASUVORK5CYII='), auto;
+      }
+
+      /* Utilities */
+      .pixel-text-glow {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 2px 2px 0px #2d3436;
+      }
+
+      /* CRT Effect - Authentic Scanlines */
+      .crt-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        pointer-events: none;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 0.1) 50%,
+          rgba(0, 0, 0, 0.1)
+        );
+        background-size: 100% 4px;
+        animation: scanline 0.3s linear infinite; 
+        opacity: 0.3; /* Subtle effect */
+      }
+      
+      @keyframes scanline {
+          0% { background-position: 0 0; }
+          100% { background-position: 0 4px; }
+      }
+
+      /* Washi Tape */
+      .washi-tape {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-2deg);
+        width: 100px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        backdrop-filter: blur(2px);
+        z-index: 10;
+        border-left: 2px dashed rgba(0,0,0,0.1);
+        border-right: 2px dashed rgba(0,0,0,0.1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "gsap": "https://esm.sh/gsap@^3.14.2",
+    "gsap/": "https://esm.sh/gsap@^3.14.2/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="pixel-cursor text-white antialiased">
+    <div id="root"></div>
+    <div class="crt-overlay"></div>
+    <!-- Vite Entry Point -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
