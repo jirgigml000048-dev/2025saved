@@ -113,8 +113,9 @@ export const ENVELOPES: EnvelopeData[] = [
   { 
     id: 12, 
     title: "Dec", 
-    message: "老天一定是公平的。放开你的我，高低会越来越美丽和闪耀✨ 而那个包容爱护我的你，也会哦～", 
-    imageUrl: "https://youke2.picui.cn/s1/2025/12/20/694578e931bc6.png", 
+    message: "大多数时候，我已经不会再想那么多了，毕竟你早就不在恋爱的心流里了🤪（你自己知道）偶尔会涌上一丢委屈，明明根本不是我的原因😡  问题不大，往好了想，我这么善良地不为难人，是在积德的呀，肯定会越来越美丽和闪耀吧😌
+", 
+    imageUrl: "https://youke2.picui.cn/s1/2025/12/24/694be82799e50.png", 
     scale: 1.0 
   },
 ];
